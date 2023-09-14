@@ -23,7 +23,7 @@ def extract_elements_from_pdf(pdf_file_path):
     pdf_document.close()
     return elements
 
-# Сравниваем элементов двух списков
+# Сравниваем элементы двух списков
 def compare_elements(list1, list2):
     result = {}
 
