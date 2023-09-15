@@ -1,9 +1,12 @@
 import fitz
 import json
 
+pdf_file_1 = "pdf/task.pdf"
+pdf_file_2 = "pdf/task2.pdf"
+
 # Извлекаем элементы из PDF-файла
-def extract_elements_from_pdf(pdf_file_path):
-    pdf_document = fitz.open(pdf_file_path)
+def extract_elements_from_pdf(pdf_file):
+    pdf_document = fitz.open(pdf_file)
     elements = []
 
     for page_num in range(len(pdf_document)):
@@ -23,7 +26,7 @@ def extract_elements_from_pdf(pdf_file_path):
     pdf_document.close()
     return elements
 
-# Сравниваем элементов двух списков
+# Сравниваем элементы двух списков
 def compare_elements(list1, list2):
     result = {}
 
@@ -38,11 +41,10 @@ def compare_elements(list1, list2):
     return result
 
 # Извлекаем элементы из обоих PDF-файлов
-pdf_file_path1 = "pdf/task.pdf"
-pdf_file_path2 = "pdf/task2.pdf"
 
-elements_pdf1 = extract_elements_from_pdf(pdf_file_path1)
-elements_pdf2 = extract_elements_from_pdf(pdf_file_path2)
+
+elements_pdf1 = extract_elements_from_pdf(pdf_file_1)
+elements_pdf2 = extract_elements_from_pdf(pdf_file_2)
 
 # Сравниваем элементы
 comparison_result = compare_elements(elements_pdf1, elements_pdf2)
