@@ -42,7 +42,6 @@ def compare_elements(list1, list2):
 
 # Извлекаем элементы из обоих PDF-файлов
 
-
 elements_pdf1 = extract_elements_from_pdf(pdf_file_1)
 elements_pdf2 = extract_elements_from_pdf(pdf_file_2)
 
